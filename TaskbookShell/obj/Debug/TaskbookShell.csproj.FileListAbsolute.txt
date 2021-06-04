@@ -1,0 +1,17 @@
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\obj\Debug\TaskbookShell.csprojAssemblyReference.cache
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\obj\Debug\TaskbookShell.Form1.resources
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\obj\Debug\TaskbookShell.Properties.Resources.resources
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\obj\Debug\TaskbookShell.csproj.GenerateResource.cache
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\obj\Debug\TaskbookShell.csproj.CoreCompileInputs.cache
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\obj\Debug\TaskbookShell.csproj.CopyComplete
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\bin\Debug\PT4Integrator.exe.config
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\bin\Debug\PT4Integrator.exe.manifest
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\bin\Debug\PT4Integrator.application
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\bin\Debug\PT4Integrator.exe
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\bin\Debug\PT4Integrator.pdb
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\obj\Debug\PT4Integrator.exe.manifest
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\obj\Debug\PT4Integrator.application
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\obj\Debug\PT4Integrator.exe
+C:\Users\Dima\Desktop\TaskbookShell\TaskbookShell\obj\Debug\PT4Integrator.pdb

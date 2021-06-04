@@ -1,0 +1,735 @@
+{
+  "menuStrip": [
+    {
+      "name": "PTmenu",
+      "text": "Help",
+      "instructions": [],
+      "subMenu": [
+        {
+          "name": "PTmenuOverview",
+          "text": "Overview",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/",
+              "offlineTopic": "index.html"
+            }
+          ]
+        },
+        {
+          "name": "PTmenuSetup",
+          "text": "Setup",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/setup.php",
+              "offlineTopic": "setup.html"
+            }
+          ]
+        },
+        {
+          "name": "PTmenuLoad",
+          "text": "Load",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/load.php",
+              "offlineTopic": "load.html"
+            }
+          ]
+        },
+        {
+          "name": "PTmenuWindow",
+          "text": "PT window",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/window.php",
+              "offlineTopic": "window.html"
+            }
+          ]
+        },
+        {
+          "name": "PTmenuDebug",
+          "text": "Debug pannel",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/debug.php",
+              "offlineTopic": "debug.html"
+            }
+          ]
+        },
+        {
+          "name": "PTmenuDemo",
+          "text": "Demo mode",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/demo.php",
+              "offlineTopic": "demo.html"
+            }
+          ]
+        },
+        {
+          "name": "PTmenuResult",
+          "text": "Browsing results",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/results.php",
+              "offlineTopic": "results.html"
+            }
+          ]
+        },
+        {
+          "name": "PTmenuDownload",
+          "text": "Download",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/download.php",
+              "offlineTopic": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TasksMenu",
+      "text": "Tasks",
+      "instructions": [],
+      "subMenu": [
+        {
+          "name": "TasksOverview",
+          "text": "Overview",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/tasks/index.php",
+              "offlineTopic": "/tasks/index.html"
+            }
+          ]
+        },
+        {
+          "name": "TasksInOut",
+          "text": "In-Out",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/tasks/io.php",
+              "offlineTopic": "/tasks/inout.html"
+            }
+          ]
+        },
+        {
+          "name": "TasksGroups",
+          "text": "Tasks Groups",
+          "instructions": [],
+          "subMenu": [
+            {
+              "name": "TasksBegin",
+              "text": "Begin",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/begin.php",
+                  "offlineTopic": "/tasks/begin.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksInteger",
+              "text": "Integer",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/integer.php",
+                  "offlineTopic": "/tasks/integer.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksBoolean",
+              "text": "boolean",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/boolean.php",
+                  "offlineTopic": "/tasks/boolean.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksIf",
+              "text": "If",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/if.php",
+                  "offlineTopic": "/tasks/if.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksCase",
+              "text": "case",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/case.php",
+                  "offlineTopic": "/tasks/case.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksFor",
+              "text": "For",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/for.php",
+                  "offlineTopic": "/tasks/for.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksWhile",
+              "text": "While",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/while.php",
+                  "offlineTopic": "/tasks/while.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksSeries",
+              "text": "Series",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/series.php",
+                  "offlineTopic": "/tasks/series.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksProc",
+              "text": "Proc",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/proc.php",
+                  "offlineTopic": "/tasks/proc.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksFunc",
+              "text": "Func",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/func.php",
+                  "offlineTopic": "/tasks/func.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksMinMax",
+              "text": "MinMax",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/minmax.php",
+                  "offlineTopic": "/tasks/minmax.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksArray",
+              "text": "Array",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/array.php",
+                  "offlineTopic": "/tasks/array.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksMatrix",
+              "text": "Matrix",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/matrix.php",
+                  "offlineTopic": "/tasks/matrix.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksString",
+              "text": "String",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/string.php",
+                  "offlineTopic": "/tasks/string.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksFile",
+              "text": "File",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/file.php",
+                  "offlineTopic": "/tasks/file.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksText",
+              "text": "text",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/text.php",
+                  "offlineTopic": "/tasks/text.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksParam",
+              "text": "Param",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/param.php",
+                  "offlineTopic": "/tasks/param.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksRecur",
+              "text": "Recur",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/recur.php",
+                  "offlineTopic": "/tasks/recur.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksDynamic",
+              "text": "Dynamic",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/dynamic.php",
+                  "offlineTopic": "/tasks/dynamic.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksDynamicObj",
+              "text": "Dynamic (obj)",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/dynamic_obj.php",
+                  "offlineTopic": "/tasks/dynamic_obj.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksTree",
+              "text": "Tree",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/tree.php",
+                  "offlineTopic": "/tasks/tree.html"
+                }
+              ]
+            },
+            {
+              "name": "TasksTreeObj",
+              "text": "Tree(obj)",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/tasks/tree_obj.php",
+                  "offlineTopic": "/tasks/tree_obj.html"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PTExamples",
+      "text": "Examples",
+      "instructions": [],
+      "subMenu": [
+        {
+          "name": "PTExamplesOverview",
+          "text": "Overview",
+          "onlineOnly":  1,
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/examples/index.php",
+              "offlineTopic": ""
+            }
+          ]
+        },
+        {
+          "name": "PTExamplesPascalABC",
+          "text": "Pascal ABC",
+          "onlineOnly": 1,
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/examples/pabc_help.php",
+              "offlineTopic": "/examples/pabc_help.html"
+            }
+          ]
+        },
+        {
+          "name": "PTExamplesPascal",
+          "text": "Pascal",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/examples/pas_help.php",
+              "offlineTopic": "/examples/pas_help.html"
+            }
+          ]
+        },
+        {
+          "name": "PTExamplesVB",
+          "text": "Visual Basic",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/examples/bas_help.php",
+              "offlineTopic": "/examples/bas_help.html"
+            }
+          ]
+        },
+        {
+          "name": "PTExamplesC++",
+          "text": "C++",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/examples/cpp_help.php",
+              "offlineTopic": "/examples/cpp_help.html"
+            }
+          ]
+        },
+        {
+          "name": "PTExamplesNet",
+          "text": "C#, VB.NET, F#",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/examples/net_help.php",
+              "offlineTopic": "/examples/net_help.html"
+            }
+          ]
+        },
+        {
+          "name": "PTExamplesPhyton",
+          "text": "Phyton",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/examples/py_help.php",
+              "offlineTopic": "/examples/py_help.html"
+            }
+          ]
+        },
+        {
+          "name": "PTExamplesJava",
+          "text": "Java",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/examples/java_help.php",
+              "offlineTopic": "/examples/java_help.html"
+            }
+          ]
+        },
+        {
+          "name": "PTExamplesRuby",
+          "text": "Ruby",
+          "instructions": [
+            {
+              "operation": "link",
+              "onlinePath": "/examples/rb_help.php",
+              "offlineTopic": "/examples/rb_help.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PTExtentions",
+      "text": "Extentions",
+      "onlineOnly": 1,
+      "instructions": [],
+      "subMenu": [
+        {
+          "name": "PTTeacherPack",
+          "text": "TeacherPack",
+          "instructions": [],
+          "subMenu": [
+            {
+              "name": "PTTeacherPackOverview",
+              "text": "Theacher pack overview",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/teacherpack/index.php",
+                  "offlineTopic": ""
+                }
+              ]
+            },
+            {
+              "name": "PTTeacherPackInstallPT",
+              "text": "install for PT",
+              "instructions": [
+                {
+                  "operation": "install",
+                  "link": "http://ptaskbook.com/download/PT4TeacherPack_v3_2ru.exe",
+                  "fileName": "PT4TeacherPack_v3_2ru.exe",
+                  "msi": 0,
+                  "waitEnd": 0,
+                  "adminMode": 0
+                }
+              ]
+            },
+            {
+              "name": "PTTeacherPackInstallPABC",
+              "text": "install for Pascal ABC",
+              "instructions": [
+                {
+                  "operation": "install",
+                  "link": "http://ptaskbook.com/download/PABCTeacherPack_v3_1ru.exe",
+                  "fileName": "PABCTeacherPack_v3_1ru.exe",
+                  "msi": 0,
+                  "waitEnd": 0,
+                  "adminMode": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PTBio",
+          "text": "PT for Bio",
+          "instructions": [],
+          "subMenu": [
+            {
+              "name": "PTBioOverview",
+              "text": "Overview",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/ptforbio/index.php",
+                  "offlineTopic": ""
+                }
+              ]
+            },
+            {
+              "name": "PTBioInstall",
+              "text": "install PT for Bio",
+              "instructions": [
+                {
+                  "operation": "install",
+                  "link": "http://ptaskbook.com/download/PTforBio_v1_1ru.exe",
+                  "fileName": "PTforBio_v1_1ru.exe",
+                  "msi": 0,
+                  "waitEnd": 0,
+                  "adminMode": 0
+                }
+              ]
+            },
+            {
+              "name": "PTBioInstallABC",
+              "text": "install PT for Bio(Pascal ABC)",
+              "instructions": [
+                {
+                  "operation": "install",
+                  "link": "http://ptaskbook.com/download/PABCforBio_v1_0ru.exe",
+                  "fileName": "PABCforBio_v1_0ru.exe",
+                  "msi": 0,
+                  "waitEnd": 0,
+                  "adminMode": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PTLINQ",
+          "text": "PT for LINQ",
+          "instructions": [],
+          "subMenu": [
+            {
+              "name": "PTLINQOverview",
+              "text": "Overview",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/ptforlinq/index.php",
+                  "offlineTopic": ""
+                }
+              ]
+            },
+            {
+              "name": "PTLINQInstall",
+              "text": "install PT for LINQ",
+              "instructions": [
+                {
+                  "operation": "install",
+                  "link": "http://ptaskbook.com/download/PTforLINQ_v1_3ru.exe",
+                  "fileName": "PTforLINQ_v1_3ru.exe",
+                  "msi": 0,
+                  "waitEnd": 0,
+                  "adminMode": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PTExam",
+          "text": "PT for Exam",
+          "instructions": [],
+          "subMenu": [
+            {
+              "name": "PTExamOverview",
+              "text": "Overview",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/ptforexam/index.php",
+                  "offlineTopic": ""
+                }
+              ]
+            },
+            {
+              "name": "PTExamInstall",
+              "text": "install PT for Exam",
+              "instructions": [
+                {
+                  "operation": "install",
+                  "link": "http://ptaskbook.com/download/PTforExam_v2_4ru.exe",
+                  "fileName": "PTforExam_v2_4ru.exe",
+                  "msi": 0,
+                  "waitEnd": 0,
+                  "adminMode": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PTSTL",
+          "text": "PT for STL",
+          "instructions": [],
+          "subMenu": [
+            {
+              "name": "PTSTLOverview",
+              "text": "Overview",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/ptforstl/index.php",
+                  "offlineTopic": ""
+                }
+              ]
+            },
+            {
+              "name": "PTSTLInstall",
+              "text": "install PT for STL",
+              "instructions": [
+                {
+                  "operation": "install",
+                  "link": "http://ptaskbook.com/download/PTforSTL_v1_0ru.exe",
+                  "fileName": "PTforSTL_v1_0ru.exe",
+                  "msi": 0,
+                  "waitEnd": 0,
+                  "adminMode": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PTforMPI2",
+          "text": "PT for MPI-2",
+          "instructions": [],
+          "subMenu": [
+            {
+              "name": "PTforMPI2Overview",
+              "text": "PT for MPI-2 Overview",
+              "instructions": [
+                {
+                  "operation": "link",
+                  "onlinePath": "/ptformpi/index.php",
+                  "offlineTopic": ""
+                }
+              ]
+            },
+            {
+              "name": "PTforMPI2Install",
+              "text": "PT for MPI-2 install",
+              "instructions": [
+                {
+                  "operation": "install",
+                  "link": "http://www.mpich.org/static/downloads/1.3/mpich2-1.3-win-ia32.msi",
+                  "fileName": "mpich2-1.3-win-ia32.msi",
+                  "msi": 1,
+                  "waitEnd": 1,
+                  "adminMode": 1
+                },
+                {
+                  "operation": "install",
+                  "link": "http://ptaskbook.com/download/PTforMPI2_v1_1ruen.exe",
+                  "fileName": "PTforMPI2_v1_1ruen.exe",
+                  "msi": 0,
+                  "waitEnd": 1,
+                  "adminMode": 1
+                },
+                {
+                  "operation": "install",
+                  "link": "http://ptaskbook.com/download/PTforOMP_v1_5ru.exe",
+                  "fileName": "PTforOMP_v1_5ru.exe",
+                  "msi": 0,
+                  "waitEnd": 1,
+                  "adminMode": 1
+                },
+                {
+                  "operation": "execute",
+                  "filePath": "/PT4Setup.exe",
+                  "waitEnd": 0,
+                  "adminMode": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
