@@ -129,6 +129,10 @@
     <None Include="Taskbook.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="PT3Demo.png" />
+    <None Include="PT3Load.png" />
+    <None Include="PT3Run.png" />
+    <None Include="PT3Setup.png" />
     <Content Include="PTIteratorIcon.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -11,7 +11,8 @@ namespace TaskbookShell.Instructions
 {
     public abstract class Instruction
     {
-        public abstract void Do(bool onlineMod);
+        public PTSettings PTSet{ get; set; }
+        public abstract Task Do(bool onlineMod);
     }
 
     [JsonConverter(typeof(InstConverter))]
@@ -29,10 +30,11 @@ namespace TaskbookShell.Instructions
             Instructions.Add(i);
         }
 
-        public void Do(bool onlineMod)
+        public async void Do(bool onlineMod)
         {
             foreach (Instruction i in Instructions)
-                i.Do(onlineMod);
+                 await i.Do(onlineMod);
+
         }
     }
 
@@ -55,19 +57,17 @@ namespace TaskbookShell.Instructions
                 {
                     case "execute":
                         Execute exe = obj.ToObject<Instructions.Execute>(serializer);
-                        exe.WorkingDirectory = context.WorkingDirectory;
+                        exe.PTSet = context;
                         instList.Instructions.Add(exe);
                         break;
                     case "install":
                         Install i = obj.ToObject<Instructions.Install>(serializer);
-                        i.Wc = context.Wc;
+                        i.PTSet = context;
                         instList.Instructions.Add(i);
                         break;
                     default:
                         Link l = obj.ToObject<Instructions.Link>(serializer);
-                        l.HelpNamespace = context.HelpNamespace;
-                        l.Lang = context.Lang;
-                        l.Host = context.Host;
+                        l.PTSet = context;
                         instList.Instructions.Add(l);
                         break;
                 }

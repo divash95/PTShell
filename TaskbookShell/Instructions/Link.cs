@@ -29,29 +29,21 @@ namespace TaskbookShell.Instructions
         //Сайт
         public string Host { get; set; }
 
-
-
-        public Link(string onlinePath, string offlineTopic, string host, string helpNamespace, string lang = "ru")
-        {
-            OnlinePath = onlinePath;
-            OfflineTopic = offlineTopic;
-            Host = host;
-            HelpNamespace = helpNamespace;
-            Lang = lang;
-        }
-
         //Если есть соединение, то вызываем раздел сайта. Иначе раздел справочной системы
-        public override void Do(bool onlineMod)
+        public async override Task Do(bool onlineMod)
         {
-            if (onlineMod && OnlinePath !="" )
+            await Task.Run(() =>
             {
-                string path = "http://" + Host + "/" + Lang + OnlinePath;
-                Process.Start(path);
-            }
-            else if(OfflineTopic != "")
-            {
-                Help.ShowHelp(null, HelpNamespace, HelpNavigator.Topic, OfflineTopic);
-            }
+                if (onlineMod && OnlinePath !="" )
+                {
+                    string path = "http://" + PTSet.Host + "/" + PTSet.Lang + OnlinePath;
+                    Process.Start(path);
+                }
+                else if(OfflineTopic != "")
+                {
+                    Help.ShowHelp(null, PTSet.PtDirectory + PTSet.HelpNamespace, HelpNavigator.Topic, OfflineTopic);
+                }
+            });
         }
 
         

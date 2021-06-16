@@ -6,20 +6,12 @@
       "helpNamespace": "PT4Help.chm",
       "elements": [
         {
-          "elName": "ptSetupPanel",
-          "elText": "Настройка задачника"
+          "elName": "radioButtonOnline",
+          "elText": "Онлайн"
         },
         {
-          "elName": "ptDemoPanel",
-          "elText": "Демо-режим"
-        },
-        {
-          "elName": "ptLoadPanel",
-          "elText": "Загрузка заданий"
-        },
-        {
-          "elName": "ptResPanel",
-          "elText": "Результаты"
+          "elName": "radioButtonLocal",
+          "elText": "Локальный"
         },
         {
           "elName": "PTmenu",
@@ -179,7 +171,7 @@
         },
         {
           "elName": "internetModMenu",
-          "elText": "Интернет"
+          "elText": "Онлайн"
         },
         {
           "elName": "localModMenu",
@@ -193,20 +185,12 @@
       "helpNamespace": "PT4Help_en.chm",
       "elements": [
         {
-          "elName": "ptSetupPanel",
-          "elText": "Setup"
+          "elName": "radioButtonOnline",
+          "elText": "Online"
         },
         {
-          "elName": "ptDemoPanel",
-          "elText": "Demo"
-        },
-        {
-          "elName": "ptLoadPanel",
-          "elText": "Load"
-        },
-        {
-          "elName": "ptResPanel",
-          "elText": "Results"
+          "elName": "radioButtonLocal",
+          "elText": "Local"
         },
         {
           "elName": "PTmenu",
@@ -318,7 +302,7 @@
         },
         {
           "elName": "internetModMenu",
-          "elText": "Internet"
+          "elText": "Online"
         },
         {
           "elName": "localModMenu",

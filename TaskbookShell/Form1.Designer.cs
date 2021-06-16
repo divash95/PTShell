@@ -28,37 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.downloadProgressBar = new System.Windows.Forms.ProgressBar();
             this.ptMenuStrip = new System.Windows.Forms.MenuStrip();
             this.menuSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.langMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.modMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.internetModMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.localModMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelStrip = new System.Windows.Forms.MenuStrip();
-            this.internetModPanel = new System.Windows.Forms.ToolStripMenuItem();
-            this.localModPanel = new System.Windows.Forms.ToolStripMenuItem();
-            this.ptSetupPanel = new System.Windows.Forms.ToolStripMenuItem();
-            this.ptDemoPanel = new System.Windows.Forms.ToolStripMenuItem();
-            this.ptLoadPanel = new System.Windows.Forms.ToolStripMenuItem();
-            this.ptResPanel = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.downloadProgressBar = new System.Windows.Forms.ProgressBar();
+            this.radioButtonOnline = new System.Windows.Forms.RadioButton();
+            this.radioButtonLocal = new System.Windows.Forms.RadioButton();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.ptMenuStrip.SuspendLayout();
-            this.panelStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // helpProvider1
             // 
             this.helpProvider1.HelpNamespace = "C:\\Program Files (x86)\\PT4\\PT4Help.chm";
-            // 
-            // downloadProgressBar
-            // 
-            this.downloadProgressBar.Location = new System.Drawing.Point(0, 51);
-            this.downloadProgressBar.Name = "downloadProgressBar";
-            this.downloadProgressBar.Size = new System.Drawing.Size(402, 23);
-            this.downloadProgressBar.TabIndex = 13;
-            this.downloadProgressBar.Visible = false;
             // 
             // ptMenuStrip
             // 
@@ -66,7 +62,7 @@
             this.menuSettings});
             this.ptMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ptMenuStrip.Name = "ptMenuStrip";
-            this.ptMenuStrip.Size = new System.Drawing.Size(452, 24);
+            this.ptMenuStrip.Size = new System.Drawing.Size(530, 24);
             this.ptMenuStrip.TabIndex = 11;
             this.ptMenuStrip.Text = "MenuStrip";
             // 
@@ -108,72 +104,118 @@
             this.localModMenu.Text = "Local";
             this.localModMenu.Click += new System.EventHandler(this.ModMenuClick);
             // 
-            // panelStrip
+            // pictureBox1
             // 
-            this.panelStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.internetModPanel,
-            this.localModPanel,
-            this.ptSetupPanel,
-            this.ptDemoPanel,
-            this.ptLoadPanel,
-            this.ptResPanel});
-            this.panelStrip.Location = new System.Drawing.Point(0, 24);
-            this.panelStrip.Name = "panelStrip";
-            this.panelStrip.Size = new System.Drawing.Size(452, 24);
-            this.panelStrip.TabIndex = 14;
-            this.panelStrip.Text = "MenuStrip";
+            this.pictureBox1.BackgroundImage = global::TaskbookShell.Properties.Resources.PT3Setup;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(142, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 22);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.SetupBtn_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.PictureBox3_MouseHover);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.PictureBox3_MouseLeave);
             // 
-            // internetModPanel
+            // pictureBox2
             // 
-            this.internetModPanel.Name = "internetModPanel";
-            this.internetModPanel.Size = new System.Drawing.Size(60, 20);
-            this.internetModPanel.Text = "Internet";
-            this.internetModPanel.Visible = false;
-            this.internetModPanel.Click += new System.EventHandler(this.ModMenuClick);
+            this.pictureBox2.BackgroundImage = global::TaskbookShell.Properties.Resources.PT3Demo;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(179, 30);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(29, 22);
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.DemoBtn_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.PictureBox3_MouseHover);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.PictureBox3_MouseLeave);
             // 
-            // localModPanel
+            // pictureBox3
             // 
-            this.localModPanel.Name = "localModPanel";
-            this.localModPanel.Size = new System.Drawing.Size(47, 20);
-            this.localModPanel.Text = "Local";
-            this.localModPanel.Visible = false;
-            this.localModPanel.Click += new System.EventHandler(this.ModMenuClick);
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox3.BackgroundImage = global::TaskbookShell.Properties.Resources.PT3Load;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(216, 30);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(29, 22);
+            this.pictureBox3.TabIndex = 17;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.LoadBtn_Click);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.PictureBox3_MouseHover);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.PictureBox3_MouseLeave);
             // 
-            // ptSetupPanel
+            // pictureBox4
             // 
-            this.ptSetupPanel.Name = "ptSetupPanel";
-            this.ptSetupPanel.Size = new System.Drawing.Size(63, 20);
-            this.ptSetupPanel.Text = "PTSetup";
-            this.ptSetupPanel.Click += new System.EventHandler(this.SetupBtn_Click);
+            this.pictureBox4.BackgroundImage = global::TaskbookShell.Properties.Resources.PT3Run;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(253, 30);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(29, 22);
+            this.pictureBox4.TabIndex = 18;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.ResultBtn_Click);
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.PictureBox3_MouseHover);
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.PictureBox3_MouseLeave);
             // 
-            // ptDemoPanel
+            // downloadProgressBar
             // 
-            this.ptDemoPanel.Name = "ptDemoPanel";
-            this.ptDemoPanel.Size = new System.Drawing.Size(65, 20);
-            this.ptDemoPanel.Text = "PTDemo";
-            this.ptDemoPanel.Click += new System.EventHandler(this.DemoBtn_Click);
+            this.downloadProgressBar.Location = new System.Drawing.Point(291, 32);
+            this.downloadProgressBar.Name = "downloadProgressBar";
+            this.downloadProgressBar.Size = new System.Drawing.Size(227, 20);
+            this.downloadProgressBar.TabIndex = 19;
+            this.downloadProgressBar.Visible = false;
             // 
-            // ptLoadPanel
+            // radioButtonOnline
             // 
-            this.ptLoadPanel.Name = "ptLoadPanel";
-            this.ptLoadPanel.Size = new System.Drawing.Size(59, 20);
-            this.ptLoadPanel.Text = "PTLoad";
-            this.ptLoadPanel.Click += new System.EventHandler(this.LoadBtn_Click);
+            this.radioButtonOnline.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonOnline.AutoSize = true;
+            this.radioButtonOnline.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.radioButtonOnline.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.radioButtonOnline.Location = new System.Drawing.Point(10, 29);
+            this.radioButtonOnline.Margin = new System.Windows.Forms.Padding(0);
+            this.radioButtonOnline.Name = "radioButtonOnline";
+            this.radioButtonOnline.Size = new System.Drawing.Size(47, 23);
+            this.radioButtonOnline.TabIndex = 20;
+            this.radioButtonOnline.Text = "Online";
+            this.radioButtonOnline.UseVisualStyleBackColor = false;
+            this.radioButtonOnline.Click += new System.EventHandler(this.RadioButtonOnline_Click);
             // 
-            // ptResPanel
+            // radioButtonLocal
             // 
-            this.ptResPanel.Name = "ptResPanel";
-            this.ptResPanel.Size = new System.Drawing.Size(65, 20);
-            this.ptResPanel.Text = "PTResult";
-            this.ptResPanel.Click += new System.EventHandler(this.ResultBtn_Click);
+            this.radioButtonLocal.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonLocal.AutoSize = true;
+            this.radioButtonLocal.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.radioButtonLocal.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonLocal.Checked = true;
+            this.radioButtonLocal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.radioButtonLocal.Location = new System.Drawing.Point(60, 29);
+            this.radioButtonLocal.Margin = new System.Windows.Forms.Padding(0);
+            this.radioButtonLocal.Name = "radioButtonLocal";
+            this.radioButtonLocal.Size = new System.Drawing.Size(43, 23);
+            this.radioButtonLocal.TabIndex = 21;
+            this.radioButtonLocal.TabStop = true;
+            this.radioButtonLocal.Text = "Local";
+            this.radioButtonLocal.UseVisualStyleBackColor = false;
+            this.radioButtonLocal.Click += new System.EventHandler(this.RadioButtonLocal_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "PT";
+            this.notifyIcon1.Visible = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 49);
-            this.Controls.Add(this.panelStrip);
+            this.ClientSize = new System.Drawing.Size(530, 57);
+            this.Controls.Add(this.radioButtonLocal);
+            this.Controls.Add(this.radioButtonOnline);
             this.Controls.Add(this.downloadProgressBar);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ptMenuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
@@ -181,10 +223,13 @@
             this.MainMenuStrip = this.ptMenuStrip;
             this.Name = "Form1";
             this.Text = "Programming Taskbook Integrator";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ptMenuStrip.ResumeLayout(false);
             this.ptMenuStrip.PerformLayout();
-            this.panelStrip.ResumeLayout(false);
-            this.panelStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,20 +237,20 @@
 
         #endregion
         private System.Windows.Forms.HelpProvider helpProvider1;
-        private System.Windows.Forms.ProgressBar downloadProgressBar;
         private System.Windows.Forms.MenuStrip ptMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem menuSettings;
         private System.Windows.Forms.ToolStripMenuItem langMenu;
         private System.Windows.Forms.ToolStripMenuItem modMenu;
         private System.Windows.Forms.ToolStripMenuItem internetModMenu;
         private System.Windows.Forms.ToolStripMenuItem localModMenu;
-        private System.Windows.Forms.MenuStrip panelStrip;
-        private System.Windows.Forms.ToolStripMenuItem internetModPanel;
-        private System.Windows.Forms.ToolStripMenuItem localModPanel;
-        private System.Windows.Forms.ToolStripMenuItem ptSetupPanel;
-        private System.Windows.Forms.ToolStripMenuItem ptDemoPanel;
-        private System.Windows.Forms.ToolStripMenuItem ptLoadPanel;
-        private System.Windows.Forms.ToolStripMenuItem ptResPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.ProgressBar downloadProgressBar;
+        private System.Windows.Forms.RadioButton radioButtonOnline;
+        private System.Windows.Forms.RadioButton radioButtonLocal;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

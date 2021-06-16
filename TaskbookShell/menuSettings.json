@@ -512,7 +512,7 @@
                   "link": "http://ptaskbook.com/download/PT4TeacherPack_v3_2ru.exe",
                   "fileName": "PT4TeacherPack_v3_2ru.exe",
                   "msi": 0,
-                  "waitEnd": 0,
+                  "waitEnd": 1,
                   "adminMode": 0
                 }
               ]
@@ -526,7 +526,7 @@
                   "link": "http://ptaskbook.com/download/PABCTeacherPack_v3_1ru.exe",
                   "fileName": "PABCTeacherPack_v3_1ru.exe",
                   "msi": 0,
-                  "waitEnd": 0,
+                  "waitEnd": 1,
                   "adminMode": 0
                 }
               ]
@@ -558,7 +558,7 @@
                   "link": "http://ptaskbook.com/download/PTforBio_v1_1ru.exe",
                   "fileName": "PTforBio_v1_1ru.exe",
                   "msi": 0,
-                  "waitEnd": 0,
+                  "waitEnd": 1,
                   "adminMode": 0
                 }
               ]
@@ -572,7 +572,7 @@
                   "link": "http://ptaskbook.com/download/PABCforBio_v1_0ru.exe",
                   "fileName": "PABCforBio_v1_0ru.exe",
                   "msi": 0,
-                  "waitEnd": 0,
+                  "waitEnd": 1,
                   "adminMode": 0
                 }
               ]
@@ -604,7 +604,7 @@
                   "link": "http://ptaskbook.com/download/PTforLINQ_v1_3ru.exe",
                   "fileName": "PTforLINQ_v1_3ru.exe",
                   "msi": 0,
-                  "waitEnd": 0,
+                  "waitEnd": 1,
                   "adminMode": 0
                 }
               ]
@@ -636,7 +636,7 @@
                   "link": "http://ptaskbook.com/download/PTforExam_v2_4ru.exe",
                   "fileName": "PTforExam_v2_4ru.exe",
                   "msi": 0,
-                  "waitEnd": 0,
+                  "waitEnd": 1,
                   "adminMode": 0
                 }
               ]
@@ -668,7 +668,7 @@
                   "link": "http://ptaskbook.com/download/PTforSTL_v1_0ru.exe",
                   "fileName": "PTforSTL_v1_0ru.exe",
                   "msi": 0,
-                  "waitEnd": 0,
+                  "waitEnd": 1,
                   "adminMode": 0
                 }
               ]
@@ -716,13 +716,12 @@
                   "link": "http://ptaskbook.com/download/PTforOMP_v1_5ru.exe",
                   "fileName": "PTforOMP_v1_5ru.exe",
                   "msi": 0,
-                  "waitEnd": 1,
+                  "waitEnd":  1,
                   "adminMode": 1
                 },
                 {
                   "operation": "execute",
                   "filePath": "/PT4Setup.exe",
-                  "waitEnd": 0,
                   "adminMode": 1
                 }
               ]

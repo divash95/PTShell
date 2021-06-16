@@ -60,7 +60,7 @@ namespace TaskbookShell
 
         public void DoInstructions(bool onlineMod)
         {
-            InstList.Do(onlineMod);
+           InstList.Do(onlineMod);
         }
 
     }

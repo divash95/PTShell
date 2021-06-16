@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PT4Integrator.exe" size="69592">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PT4Integrator.exe" size="79832">
       <assemblyIdentity name="PT4Integrator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lWJUAVYVtrxrdCOHeMgz8ep5PZ0h3RCMI4+wMvJ57lg=</dsig:DigestValue>
+        <dsig:DigestValue>ZX4JaOJ6ed04PAfJVGZPYplwCsCFRkOCogwmTRXeEfs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
