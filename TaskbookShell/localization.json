@@ -71,7 +71,7 @@
         },
         {
           "elName": "PTforMPI2Install",
-          "elText": "Установить компоненты"
+          "elText": "Установить PT for MPI-2"
         },
         {
           "elName": "PTExamples",
@@ -250,7 +250,7 @@
         },
         {
           "elName": "PTforMPI2Install",
-          "elText": "Install"
+          "elText": "Install PT for MPI-2"
         },
         {
           "elName": "PTExamples",
@@ -298,7 +298,7 @@
         },
         {
           "elName": "modMenu",
-          "elText": "Mod"
+          "elText": "Mode"
         },
         {
           "elName": "internetModMenu",

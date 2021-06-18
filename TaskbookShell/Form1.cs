@@ -30,6 +30,9 @@ namespace TaskbookShell
         //Соотвтетсвие индекс языка(по порядку) и настроек языка
         private Dictionary<int, Lang> languages = new Dictionary<int, Lang>();
 
+        //Список доступных языков
+        private LangList langs;
+
         //Выбранный язык
         private Lang selectedLang;
 
@@ -45,6 +48,9 @@ namespace TaskbookShell
         //путь для загрузки настроек языков(по-умолчанию)
         private string locSettingsUrl = "http://ptaskbook.com/download/localization.json";
 
+        //путь для загрузки настроек языков(по-умолчанию)
+        private string settingsPath;
+
         //файл настроек меню
         private string menuSettingsPath;
 
@@ -57,6 +63,8 @@ namespace TaskbookShell
         //Есть подключение к сайту(можно переключить в меню)     
         private bool onlineMod = true;
 
+        //язык при запуске(получаем из файла настроек)
+        private string startLang = "ru";
         public Form1()
         {
             InitializeComponent();
@@ -66,9 +74,8 @@ namespace TaskbookShell
             //Параметры отображения( поверх всех, почти правый угол, сворачивается в трей)
             this.TopMost = true;
             this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - this.Width * 2, 0);
+            this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - this.Width, 0);
            
-            notifyIcon1.MouseDoubleClick += new MouseEventHandler(notifyIcon1_MouseDoubleClick);
             Resize += new System.EventHandler(this.Form1_Resize);
 
             //Проверяем доступ к сайту задачника
@@ -81,10 +88,10 @@ namespace TaskbookShell
             if (!CheckDirrectories())
                 MessageBox.Show("Не найден установленный задачник PT4");
 
-            //Загрузить языковые настройки и выбрать первый язык из списка
+            //Загрузить языковые настройки и выбрать язык, указанный в настройках
             LoadLanguages(localizationPath);
 
-            selectedLang = languages[0];
+            //selectedLang = languages[0];
 
             //Сохраняем контекст для сериализации файла настроек   
             ptSettings = new PTSettings(host, ptDirectory + selectedLang.HelpNamespace, selectedLang.SiteDir, ptDirectory, workingDirectory, projectPath, downloadProgressBar);
@@ -104,17 +111,19 @@ namespace TaskbookShell
         private void UpdateSettingFiles(string projectPath)
         {
             //downloadSettings.txt содержит дату последнего обновления настроек и url для загрузки этих настроек
-            string downloadSettingsPath = string.Format("{0}downloadSettings.txt", projectPath);
+            settingsPath = string.Format("{0}startSettings.txt", projectPath);
             DateTime lastDownload = new DateTime(2000, 1, 1);
             try
             {
-                string[] lines = File.ReadAllLines(downloadSettingsPath);
+                string[] lines = File.ReadAllLines(settingsPath);
+                int posX = -1;
+                int posY = -1;
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string[] fileAttrs = lines[i].Split('=');
                     string parKey = fileAttrs[0];
                     string parValue = fileAttrs[1];
-                    switch (parValue)
+                    switch (parKey)
                     {
                         case "lastDownload":
                             DateTime.TryParse(parValue, out lastDownload);
@@ -125,9 +134,24 @@ namespace TaskbookShell
                         case "locSettingsUrl":
                             locSettingsUrl = parValue;
                             break;
+                        case "lang":
+                            startLang = parValue;
+                            break;
+                        case "startPositionX":
+                            if (parValue != "")
+                                Int32.TryParse(parValue, out posX);
+                            break;
+                        case "startPositionY":
+                            if (parValue != "")
+                                Int32.TryParse(parValue, out posY);
+                            break;
+                        case "onlineMod":
+                            onlineMod = (parValue == "1" && onlineMod);
+                            break;
                     }
-
                 }
+                if (posX > 0 && posY > 0)
+                    this.Location = new Point(posX, posY);
             }
             catch (Exception exept)
             {
@@ -145,7 +169,7 @@ namespace TaskbookShell
                 localizationPath = string.Format("{0}/downloads/localization.json", projectPath);
                 settingsUpdated = DownloadSettings();
                 //Меняем дату последнего обновления на текущую
-                ChangeUpdateDate(downloadSettingsPath, DateTime.Now.Date);
+                ChangeUpdateDate(DateTime.Now.Date);
                 //settingsUpdated = false;
             }
             if (!onlineMod || !settingsUpdated)
@@ -156,9 +180,9 @@ namespace TaskbookShell
         }
 
         //Обновляет файл настроек загрузки(меняет дату обновления на текущую)
-        private void ChangeUpdateDate(String downloadSettingsPath, DateTime date)
+        private void ChangeUpdateDate(DateTime date)
         {
-            string[] lines = File.ReadAllLines(downloadSettingsPath);
+            string[] lines = File.ReadAllLines(settingsPath);
             string newText = "";
             for (int i = 0; i < lines.Length; i++)
             {
@@ -170,7 +194,7 @@ namespace TaskbookShell
                 else
                     newText += parKey + "=" + parValue + Environment.NewLine;
             }
-            File.WriteAllText(downloadSettingsPath, newText);
+            File.WriteAllText(settingsPath, newText);
         }
 
         //Проверка корректности системной папки и получение из конфига рабочего каталога
@@ -279,18 +303,20 @@ namespace TaskbookShell
         {
             string json = File.ReadAllText(fileName, System.Text.Encoding.Default);
 
-            LangList langs = JsonConvert.DeserializeObject<LangList>(json);
+            langs = JsonConvert.DeserializeObject<LangList>(json);
 
             int i = 0;
-            bool first = true;
             foreach (Lang l in langs.Languages)
             {
                 ToolStripMenuItem langItem = new ToolStripMenuItem();
                 langItem.Name = "langMenu_" + i.ToString();
                 langItem.Click += new EventHandler(PTForm_LangCheck);
                 langItem.Text = l.Name;
-                langItem.Checked = first;
-                first = false;
+                if (l.SiteDir == startLang)
+                {
+                    selectedLang = l;
+                    langItem.Checked = true;
+                }
                 langMenu.DropDownItems.Add(langItem);
                 languages.Add(i, l);
                 i++;
@@ -471,17 +497,6 @@ namespace TaskbookShell
             }
         }
 
-
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            // делаем нашу иконку скрытой
-            notifyIcon1.Visible = false;
-            // возвращаем отображение окна в панели
-            this.ShowInTaskbar = true;
-            //разворачиваем окно
-            WindowState = FormWindowState.Normal;
-        }
-
         private void PictureBox3_MouseHover(object sender, EventArgs e)
         {
             (sender as PictureBox).BackColor = SystemColors.ActiveCaption;
@@ -491,37 +506,54 @@ namespace TaskbookShell
         {
             (sender as PictureBox).BackColor = SystemColors.Control;
         }
-    }
 
-    //Контекст для сериализации Json
-    public class PTSettings
-    {
-
-        public string Host { get; set; }
-
-        public string HelpNamespace { get; set; }
-
-        public string Lang { get; set; }
-
-        public string PtDirectory { get; set; }
-
-        public string WorkingDirectory { get; set; }
-
-        public string ProjectPath { get; set; }
-
-        public ProgressBar DownloadProgress { get; set; }
-
-        public PTSettings(string host, string helpNamespace, string lang, string ptDirectory, string workingDirectory, string projectPath, ProgressBar downloadProgress)
+        private void NotifyIcon1_Click(object sender, EventArgs e)
         {
-            Host = host;
-            HelpNamespace = helpNamespace;
-            Lang = lang;
-            PtDirectory = ptDirectory;
-            WorkingDirectory = workingDirectory;
-            ProjectPath = projectPath;
-            DownloadProgress = downloadProgress;
+            // делаем нашу иконку скрытой
+            notifyIcon1.Visible = false;
+            // возвращаем отображение окна в панели
+            this.ShowInTaskbar = true;
+            //разворачиваем окно
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+                string[] lines = File.ReadAllLines(settingsPath);
+                string newText = "";
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    string[] fileAttrs = lines[i].Split('=');
+                    string parKey = fileAttrs[0];
+                    string parValue = fileAttrs[1];
+                switch (parKey)
+                {
+                    case "lang":
+                        newText += "lang=" + selectedLang.SiteDir + Environment.NewLine;
+                        break;
+                    case "startPositionX":
+                        newText += "startPositionX=" + this.Location.X + Environment.NewLine;
+                        break;
+                    case "startPositionY":
+                        newText += "startPositionY=" + this.Location.Y + Environment.NewLine;
+                        break;
+                    case "onlineMod":
+                        if (onlineMod)
+                            newText += "onlineMod=1" + Environment.NewLine;
+                        else
+                            newText += "onlineMod=0" + Environment.NewLine;
+                        break;
+                    default:
+                        newText += parKey + "=" + parValue + Environment.NewLine;
+                        break;
+
+                }
+                }
+                File.WriteAllText(settingsPath, newText);
         }
     }
+
+ 
 }
 
 

@@ -1,3 +1,7 @@
-lastDownload=16.06.2021
+lastDownload=18.06.2021
 menuSettingsUrl=http://ptaskbook.com/download/menuSettings.json
 locSettingsUrl=http://ptaskbook.com/download/localization.json
+lang=ru
+startPositionX=
+startPositionY=
+onlineMod=1

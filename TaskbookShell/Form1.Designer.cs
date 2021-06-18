@@ -62,7 +62,7 @@
             this.menuSettings});
             this.ptMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ptMenuStrip.Name = "ptMenuStrip";
-            this.ptMenuStrip.Size = new System.Drawing.Size(530, 24);
+            this.ptMenuStrip.Size = new System.Drawing.Size(387, 24);
             this.ptMenuStrip.TabIndex = 11;
             this.ptMenuStrip.Text = "MenuStrip";
             // 
@@ -108,9 +108,9 @@
             // 
             this.pictureBox1.BackgroundImage = global::TaskbookShell.Properties.Resources.PT3Setup;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(142, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 30);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 22);
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.SetupBtn_Click);
@@ -121,9 +121,9 @@
             // 
             this.pictureBox2.BackgroundImage = global::TaskbookShell.Properties.Resources.PT3Demo;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(179, 30);
+            this.pictureBox2.Location = new System.Drawing.Point(47, 32);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(29, 22);
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.DemoBtn_Click);
@@ -135,9 +135,9 @@
             this.pictureBox3.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox3.BackgroundImage = global::TaskbookShell.Properties.Resources.PT3Load;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(216, 30);
+            this.pictureBox3.Location = new System.Drawing.Point(85, 32);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(29, 22);
+            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
             this.pictureBox3.TabIndex = 17;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.LoadBtn_Click);
@@ -148,9 +148,9 @@
             // 
             this.pictureBox4.BackgroundImage = global::TaskbookShell.Properties.Resources.PT3Run;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(253, 30);
+            this.pictureBox4.Location = new System.Drawing.Point(123, 32);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(29, 22);
+            this.pictureBox4.Size = new System.Drawing.Size(32, 32);
             this.pictureBox4.TabIndex = 18;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.ResultBtn_Click);
@@ -159,9 +159,9 @@
             // 
             // downloadProgressBar
             // 
-            this.downloadProgressBar.Location = new System.Drawing.Point(291, 32);
+            this.downloadProgressBar.Location = new System.Drawing.Point(278, 35);
             this.downloadProgressBar.Name = "downloadProgressBar";
-            this.downloadProgressBar.Size = new System.Drawing.Size(227, 20);
+            this.downloadProgressBar.Size = new System.Drawing.Size(97, 20);
             this.downloadProgressBar.TabIndex = 19;
             this.downloadProgressBar.Visible = false;
             // 
@@ -171,7 +171,7 @@
             this.radioButtonOnline.AutoSize = true;
             this.radioButtonOnline.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.radioButtonOnline.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButtonOnline.Location = new System.Drawing.Point(10, 29);
+            this.radioButtonOnline.Location = new System.Drawing.Point(169, 35);
             this.radioButtonOnline.Margin = new System.Windows.Forms.Padding(0);
             this.radioButtonOnline.Name = "radioButtonOnline";
             this.radioButtonOnline.Size = new System.Drawing.Size(47, 23);
@@ -188,7 +188,7 @@
             this.radioButtonLocal.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButtonLocal.Checked = true;
             this.radioButtonLocal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButtonLocal.Location = new System.Drawing.Point(60, 29);
+            this.radioButtonLocal.Location = new System.Drawing.Point(217, 35);
             this.radioButtonLocal.Margin = new System.Windows.Forms.Padding(0);
             this.radioButtonLocal.Name = "radioButtonLocal";
             this.radioButtonLocal.Size = new System.Drawing.Size(43, 23);
@@ -203,12 +203,13 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "PT";
             this.notifyIcon1.Visible = true;
+            this.notifyIcon1.Click += new System.EventHandler(this.NotifyIcon1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 57);
+            this.ClientSize = new System.Drawing.Size(387, 67);
             this.Controls.Add(this.radioButtonLocal);
             this.Controls.Add(this.radioButtonOnline);
             this.Controls.Add(this.downloadProgressBar);
@@ -221,8 +222,10 @@
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.ptMenuStrip;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Programming Taskbook Integrator";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ptMenuStrip.ResumeLayout(false);
             this.ptMenuStrip.PerformLayout();

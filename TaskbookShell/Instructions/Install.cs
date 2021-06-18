@@ -33,13 +33,12 @@ namespace TaskbookShell.Instructions
         [JsonProperty("waitEnd")]
         public bool WaitEnd { get; set; }
 
-
-
         public async override Task Do(bool onlineMod)
         {
 
             string downloadFileName = System.IO.Path.GetFileName(FileName);
             string outPath = PTSet.ProjectPath + "/downloads/" + downloadFileName;
+            //загружаем файл и подключаем обработчики событий, чтобы отображать процесс загрузки
             using (WebClient webClient = new WebClient())
             {
                 WebClient wc = new WebClient();

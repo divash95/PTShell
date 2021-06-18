@@ -20,15 +20,6 @@ namespace TaskbookShell.Instructions
         [JsonProperty("offlineTopic")]
         public string OfflineTopic { get; set; }
 
-        //языковой каталог на сайте (ru или eng)
-        public string Lang { get; set; }
-
-        //путь к файлу справки chm
-        public string HelpNamespace { get; set; }
-
-        //Сайт
-        public string Host { get; set; }
-
         //Если есть соединение, то вызываем раздел сайта. Иначе раздел справочной системы
         public async override Task Do(bool onlineMod)
         {
