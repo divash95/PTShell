@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Net.NetworkInformation;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace TaskbookShell.Instructions
 {
@@ -37,7 +38,10 @@ namespace TaskbookShell.Instructions
         {
 
             string downloadFileName = System.IO.Path.GetFileName(FileName);
-            string outPath = PTSet.ProjectPath + "/downloads/" + downloadFileName;
+            string dwnldPath = PTSet.ProjectPath + "/downloads/";
+            string outPath = dwnldPath + downloadFileName;
+            if (!Directory.Exists(dwnldPath))
+                Directory.CreateDirectory(dwnldPath);
             //загружаем файл и подключаем обработчики событий, чтобы отображать процесс загрузки
             using (WebClient webClient = new WebClient())
             {

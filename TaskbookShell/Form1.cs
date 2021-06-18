@@ -69,8 +69,8 @@ namespace TaskbookShell
         {
             InitializeComponent();
 
-            string projectPath = Path.GetFullPath(Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, @"..\..\"));
-           
+            //string projectPath = Path.GetFullPath(Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, @"..\..\"));
+            string projectPath = System.IO.Directory.GetCurrentDirectory() + "//";
             //Параметры отображения( поверх всех, почти правый угол, сворачивается в трей)
             this.TopMost = true;
             this.StartPosition = FormStartPosition.Manual;
@@ -98,8 +98,15 @@ namespace TaskbookShell
             JsonSerializerSettings settings = new JsonSerializerSettings { Context = new StreamingContext(StreamingContextStates.Other, ptSettings) };
 
             //Преобразуем json в класс PTMenuString(настройки меню)
-            string json = File.ReadAllText(menuSettingsPath);
-            ptMenuString = JsonConvert.DeserializeObject<PTMenuString>(json, settings);
+            try
+            {
+                string json = File.ReadAllText(menuSettingsPath);
+                ptMenuString = JsonConvert.DeserializeObject<PTMenuString>(json, settings);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             //Создаем элементы формы на основе настроек
             LoadMenuString();
@@ -163,19 +170,14 @@ namespace TaskbookShell
             if (DateTime.Now.Subtract(lastDownload).TotalDays < 1)
                 needUpdate = false;
             bool settingsUpdated = false;
+            menuSettingsPath = string.Format("{0}/menuSettings.json", projectPath);
+            localizationPath = string.Format("{0}/localization.json", projectPath);
             if (onlineMod && needUpdate)
             {
-                menuSettingsPath = string.Format("{0}/downloads/menuSettings.json", projectPath);
-                localizationPath = string.Format("{0}/downloads/localization.json", projectPath);
                 settingsUpdated = DownloadSettings();
                 //Меняем дату последнего обновления на текущую
                 ChangeUpdateDate(DateTime.Now.Date);
                 //settingsUpdated = false;
-            }
-            if (!onlineMod || !settingsUpdated)
-            {
-                menuSettingsPath = string.Format("{0}menuSettings.json", projectPath);
-                localizationPath = string.Format("{0}localization.json", projectPath);
             }
         }
 
@@ -301,9 +303,16 @@ namespace TaskbookShell
         //Загрузка языков из файла
         public void LoadLanguages(string fileName)
         {
-            string json = File.ReadAllText(fileName, System.Text.Encoding.Default);
+            try
+            {
+                string json = File.ReadAllText(fileName, System.Text.Encoding.Default);
+                langs = JsonConvert.DeserializeObject<LangList>(json);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-            langs = JsonConvert.DeserializeObject<LangList>(json);
 
             int i = 0;
             foreach (Lang l in langs.Languages)
